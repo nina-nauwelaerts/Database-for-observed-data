@@ -4,7 +4,7 @@ getTime <- function(timeValue,timeUnit,avgValue,lloqValue,eachID){
   idLLOQ <- grepl(pattern = "<",avgValue,fixed = TRUE)
   if(length(idLLOQ)>0 | any(lloqValue != "")){
     avgValue <- gsub(pattern = "<",replacement = "",x = avgValue,fixed = TRUE)
-    LLOQ <- unique(as.numeric(unique(avgValue[idLLOQ])),as.numeric(lloqValue[lloqValue != ""]))
+    LLOQ <- unique(c(as.numeric(unique(avgValue[idLLOQ])),as.numeric(lloqValue[lloqValue != ""])))
     LLOQ <- LLOQ[!is.na(LLOQ)]
     if(length(LLOQ)>1) stop("Multiple LLOQ detected within one dataset"," for ",eachID)
     avgValue <- as.numeric(avgValue)
@@ -33,7 +33,7 @@ getAverage <- function(avgValue,avgUnit,avgType,timeValue,lloqValue,eachID){
     idLLOQ <- grepl(pattern = "<",avgValue,fixed = TRUE)
     if(length(idLLOQ)>0 | any(lloqValue != "")){
       avgValue <- gsub(pattern = "<",replacement = "",x = avgValue,fixed = TRUE)
-      LLOQ <- unique(as.numeric(unique(avgValue[idLLOQ])),as.numeric(lloqValue[lloqValue != ""]))
+      LLOQ <- unique(c(as.numeric(unique(avgValue[idLLOQ])),as.numeric(lloqValue[lloqValue != ""])))
       LLOQ <- LLOQ[!is.na(LLOQ)]
       if(length(LLOQ)>1) stop("Multiple LLOQ detected within one dataset"," for ",eachID)
       avgValue <- as.numeric(avgValue)
@@ -78,7 +78,7 @@ getVariance <- function(varValue,varUnit,varType,avgValue,avgUnit,timeValue,n,ll
     idLLOQ <- grepl(pattern = "<",avgValue,fixed = TRUE)
     if(length(idLLOQ)>0 | any(lloqValue != "")){
       avgValue <- gsub(pattern = "<",replacement = "",x = avgValue,fixed = TRUE)
-      LLOQ <- unique(as.numeric(unique(avgValue[idLLOQ])),as.numeric(lloqValue[lloqValue != ""]))
+      LLOQ <- unique(c(as.numeric(unique(avgValue[idLLOQ])),as.numeric(lloqValue[lloqValue != ""])))
       LLOQ <- LLOQ[!is.na(LLOQ)]
       if(length(LLOQ)>1) stop("Multiple LLOQ detected within one dataset"," for ",eachID)
       avgValue <- as.numeric(avgValue)
@@ -120,6 +120,7 @@ getVariance <- function(varValue,varUnit,varType,avgValue,avgUnit,timeValue,n,ll
         varComment <- "Arith. SEM converted to arith. SD"
       } else {
         varType <- ""
+        varDim <- ""
         varValue[1:length(varValue)] <- NaN
         varComment <- "Arith. SEM not converted to arith. SD (N not specified)"
       }
