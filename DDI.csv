@@ -182,7 +182,7 @@ ID;Study ID;Reference;Grouping;Victim;Perpetrator;Route Victim;Route Perpetrator
 200;Yu 2004;https://www.ncbi.nlm.nih.gov/pubmed/15289787;Treatment Rifampicin CYP3A5*1/*1;Midazolam;Rifampicin;IV;PO;Plasma;0.985221675;Arith. mean;;;;;;;0;9999;240;9999;h;Cave! Different doses tratement vs control. Ratios were dose-corrected. AUCR was calculated with CLiv values;600;;mg;PO;S0-T24-R10;h;MD OD (10 days);MD, q.d. for 10 days;;Rifodex;;;;fasted;overnight;;
 201;Yu 2004;https://www.ncbi.nlm.nih.gov/pubmed/15289787;Treatment Rifampicin CYP3A5*1/*3;Midazolam;Rifampicin;IV;PO;Plasma;0.819672131;Arith. mean;;;;;;;0;9999;240;9999;h;Cave! Different doses tratement vs control. Ratios were dose-corrected. AUCR was calculated with CLiv values;600;;mg;PO;S0-T24-R10;h;MD OD (10 days);MD, q.d. for 10 days;;Rifodex;;;;fasted;overnight;;
 202;Yu 2004;https://www.ncbi.nlm.nih.gov/pubmed/15289787;Treatment Rifampicin CYP3A5*3/*3;Midazolam;Rifampicin;IV;PO;Plasma;0.833333333;Arith. mean;;;;;;;0;9999;240;9999;h;Cave! Different doses tratement vs control. Ratios were dose-corrected. AUCR was calculated with CLiv values;600;;mg;PO;S0-T24-R10;h;MD OD (10 days);MD, q.d. for 10 days;;Rifodex;;;;fasted;overnight;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+2041;Katzenmaier 2010;https://www.ncbi.nlm.nih.gov/pubmed/20680253;Midazolam + Efavirenz;Midazolam;Efavirenz;PO;PO;Plasma;0.1027;Approx. Avg;;;0.1806;Approx. Avg;;;0;12;336;340;h;not mentioned in the paper, calculated from scanned aggregated data;400;;mg;PO;S0-T24-R14;h;MD OD (14 days);MD, q.d. for 14 days;Efavirenz;Sustiva;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
