@@ -185,8 +185,8 @@ ID;Study ID;Reference;Grouping;Victim;Perpetrator;Route Victim;Route Perpetrator
 2041;Katzenmaier 2010;https://www.ncbi.nlm.nih.gov/pubmed/20680253;Midazolam + Efavirenz;Midazolam;Efavirenz;PO;PO;Induction;Plasma;0.1027;Approx. Avg;;;0.1806;Approx. Avg;;;0;12;336;340;h;not mentioned in the paper, calculated from scanned aggregated data;400;;mg;PO;S0-T24-R14;h;MD OD (14 days);MD, q.d. for 14 days;Efavirenz;Sustiva;;;;;;;
 204;Wiesinger 2020;https://www.ncbi.nlm.nih.gov/pubmed/32275771;Weak-induction phase (RIF 10 mg);Midazolam;Rifampicin;PO;PO;Induction;Plasma;0.539;GMR;0.491-0.592;90% CI;0.632653061;Approx. Avg;;;0;9999;180;444;h;;10;;mg;PO;S0-T24-R22;h;MD OD (22 days);MD, q.d. for 22 days;;Eremfat Sirup Suspension;;;;;;;
 205;Wiesinger 2020;https://www.ncbi.nlm.nih.gov/pubmed/32275771;Strong-induction phase (RIF 600 mg);Midazolam;Rifampicin;PO;PO;Induction;Plasma;0.137;GMR;0.124-0.150;90% CI;0.18755102;Approx. Avg;;;0;9999;444;9999;h;;600;;mg;PO;S0-T24-R22;h;MD OD (22 days);MD, q.d. for 22 days;;Eremfat Tablet;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+2056;Barbarash 1988;https://www.ncbi.nlm.nih.gov/pubmed/3180898;Verapamil IV after 2 weeks of Rifampicin therapy;Verapamil;Rifampicin;IV;PO;Induction;Serum;0.81865285;Approx. Avg;;;;;;;0;inf;300;inf;h;;600;;mg;PO;S0-T24-R13;h;MD OD (13 days);1 oral dose every night;rifampin;oral formulation;;;;;;;
+2058;Barbarash 1988;https://www.ncbi.nlm.nih.gov/pubmed/3180898;Verapamil PO after 2 weeks of Rifampicin therapy;Verapamil;Rifampicin;PO;PO;Induction;Serum;0.065110099;Approx. Avg;;;0.036960986;Approx. Avg;;;0;inf;348;inf;h;;600;;mg;PO;S0-T24-R15;h;MD OD (15 days);1 oral dose every night;rifampin;oral formulation;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
