@@ -187,6 +187,15 @@ getDimension <- function(unit,eachID){
 }
 
 getCompartment <- function(compartment="plasma",eachID){
+  temp <- unlist(strsplit(compartment,"|",fixed = TRUE))
+  if(length(temp)==2){
+    compartment <- temp[2]
+  } else if(length(temp)==1){
+    compartment <- temp[1] 
+  } else{
+    stop("Too many entries for organ|compartment: ",compartment," for ",eachID)
+  }
+  
   if(tolower(compartment)=="plasma"){
     return("Plasma")
   } else if(tolower(compartment)=="arterial plasma"){
@@ -203,12 +212,22 @@ getCompartment <- function(compartment="plasma",eachID){
     return("Undefined")
   } else if(tolower(compartment)=="fraction"){
     return("Undefined")
-  } else{
-    stop("Unknown Compartment: ",compartment," for ",eachID)
+  } else if(is.element(compartment,c("Plasma","Blood Cells","Interstitial","Intracellular"))){
+    return(compartment)
+  } else {
+    return("Undefined")
+    #stop("Unknown Compartment: ",compartment," for ",eachID)
   }
 }
 
 getOrgan <- function(compartment="plasma",eachID){
+  temp <- unlist(strsplit(compartment,"|",fixed = TRUE))
+  if(length(temp)<=2){
+    compartment <- temp[1]
+  } else{
+    stop("Too many entries for organ|compartment: ",compartment," for ",eachID)
+  }
+  
   if(tolower(compartment)=="plasma"){
     return("Peripheral Venous Blood")
   } else if(tolower(compartment)=="arterial plasma"){
@@ -223,10 +242,15 @@ getOrgan <- function(compartment="plasma",eachID){
     return("Lumen")
   } else if(tolower(compartment)=="bile"){
     return("Liver")
-  } else if(tolower(compartment)=="fraction"){
+  } else if(is.element(compartment,c("Bone","Brain","Fat","Gonads","Heart","Kidney",
+                                     "Large Intestine","Liver","Lung","Muscle","Pancreas",
+                                     "Saliva","Skin","Small Intestine","Spleen","Stomach",
+                                     "Duodenum","UpperJejunum","LowerJejunum","UpperIleum","LowerIleum",
+                                     "Cecum","Colon Ascendens","Colon Transversum","Colon Descendens","Colon Sigmoid","Rectum"))){
+    return(compartment)
+  } else {
     return("Undefined")
-  } else{
-    stop("Unknown Compartment: ",compartment," for ",eachID)
+    #stop("Unknown Compartment: ",compartment," for ",eachID)
   }
 }
 

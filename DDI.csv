@@ -242,7 +242,7 @@ ID;Study ID;Reference;Grouping;Victim;Perpetrator;Route Victim;Route Perpetrator
 1355;Björkhem-Bergman 2013;https://pubmed.ncbi.nlm.nih.gov/23674608/;with Rifampicin 10 mg;Midazolam;Rifampicin;PO;PO;Induction;Plasma;0.5;GMR;;;;;;;0;10;336;346;h;AUCR inverted from CL ratio;10;;mg;PO;S0-T24-R14;h;MD OD (14 days);;;Rifadin oral suspension;;;;;;;
 1356;Björkhem-Bergman 2013;https://pubmed.ncbi.nlm.nih.gov/23674608/;with Rifampicin 20 mg;Midazolam;Rifampicin;PO;PO;Induction;Plasma;0.384615385;GMR;;;;;;;0;10;336;346;h;AUCR inverted from CL ratio;20;;mg;PO;S0-T24-R14;h;MD OD (14 days);;;Rifadin oral suspension;;;;;;;
 1357;Björkhem-Bergman 2013;https://pubmed.ncbi.nlm.nih.gov/23674608/;with Rifampicin 100 mg;Midazolam;Rifampicin;PO;PO;Induction;Plasma;0.25;GMR;;;;;;;0;10;336;346;h;AUCR inverted from CL ratio;100;;mg;PO;S0-T24-R14;h;MD OD (14 days);;;Rifadin oral suspension;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1362;Chattopadhyay 2018;https://pubmed.ncbi.nlm.nih.gov/30171692/;with Perpetrator (Rifampicin);Midazolam;Rifampicin;PO;PO;Induction;Plasma;0.141;GMR;28.8;geom. CV%;0.138;GMR;20.8;geom. CV%;0;inf;168;inf;h;Subjects received a single dose of vilaprisan 4 mg simultaneously with midazolam.;600;;mg;PO;0-24-48-72-96-120-144-180-192-216-240;h;MD OD (11 days);;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
