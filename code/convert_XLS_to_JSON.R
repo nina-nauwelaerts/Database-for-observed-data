@@ -1,9 +1,8 @@
 options("warn"=0) # default
 rm(list = ls()) # empty workspace
 closeAllConnections()
-#library(gdata)
-library(readxl)
-library(jsonlite)
+require(readxl)
+require(jsonlite)
 
 #copy paste in der cmd:
 #  cd "<path to OSP installation folder>\Open Systems Pharmacology\PK-Sim 7.3"
@@ -18,11 +17,6 @@ sharePoint <- getwd()
 DBfileName <- "ObsDataPK_OSP.xlsx"
 
 # read in database
-#studies <- read.xls(file.path(sharePoint,DBfileName),sheet="Studies",as.is=TRUE,colClasses="character",skip=1)
-#df <- read.xls(file.path(sharePoint,DBfileName),sheet="PK-Profiles",as.is=TRUE,colClasses="character")
-#MW <- read.xls(file.path(sharePoint,DBfileName),sheet="Analyte",as.is=TRUE,colClasses="character")
-#proj <- read.xls(file.path(sharePoint,DBfileName),sheet="Projects",as.is=TRUE,colClasses="character")
-
 studies <- read_xlsx(file.path(sharePoint,DBfileName), sheet = "Studies",col_types = "text", skip = 1)
 df <- read_xlsx(file.path(sharePoint,DBfileName),sheet="PK-Profiles",col_types = "text")
 MW <- read_xlsx(file.path(sharePoint,DBfileName),sheet="Analyte",col_types = "text")
