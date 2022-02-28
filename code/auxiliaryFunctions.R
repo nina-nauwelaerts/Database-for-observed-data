@@ -106,7 +106,7 @@ getVariance <- function(varValue,varUnit,varType,avgValue,avgUnit,timeValue,n,ll
       if(varDim != getDimension(avgUnit,eachID)) stop("Wrong dimension for ",varType," for ",eachID)
       varValue[is.na(varValue) | varValue<0] <- NaN
       varComment <- "."
-    } else if(tolower(varType)=="geo. sd"){
+    } else if(tolower(varType)=="geo. sd" | tolower(varType)=="geom. sd"){
       varType <- "GeometricStdDev"
       if(varUnit==""){
         varDim <- "Dimensionless"
