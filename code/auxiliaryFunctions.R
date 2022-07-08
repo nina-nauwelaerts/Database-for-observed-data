@@ -284,17 +284,17 @@ getUnitFactorToBaseUnit <- function(unit,eachID){
   unit <- tolower(unit)
   dimension <- getDimension(unit,eachID)
   if(dimension=="Concentration (mass)"){
-    unitFactor <- switch(unit, "mg/l"={1e-6},"?g/l"={1e-9},"ng/l"={1e-12},"pg/l"={1e-15},
-                         "mg/dl"={1e-5},"?g/dl"={1e-8},"ng/dl"={1e-11},"pg/dl"={1e-14},
-                         "mg/ml"={1e-3},"?g/ml"={1e-6},"ng/ml"={1e-9},"pg/ml"={1e-12},NA)
+    unitFactor <- switch(unit, "mg/l"={1e-6},"µg/l"={1e-9},"ng/l"={1e-12},"pg/l"={1e-15},
+                         "mg/dl"={1e-5},"µg/dl"={1e-8},"ng/dl"={1e-11},"pg/dl"={1e-14},
+                         "mg/ml"={1e-3},"µg/ml"={1e-6},"ng/ml"={1e-9},"pg/ml"={1e-12},NA)
   } else if(dimension=="Concentration (molar)"){
-    unitFactor <- switch(unit, "mmol/l"={1e3},"?mol/l"={1},"nmol/l"={1e-3},"pmol/l"={1e-6},
-                         "mmol/dl"={1e4},"?mol/dl"={1e1},"nmol/dl"={1e-2},"pmol/dl"={1e-5},
-                         "mmol/ml"={1e06},"?mol/ml"={1e3},"nmol/ml"={1},"pmol/ml"={1e-3},NA)
+    unitFactor <- switch(unit, "mmol/l"={1e3},"µmol/l"={1},"nmol/l"={1e-3},"pmol/l"={1e-6},
+                         "mmol/dl"={1e4},"µmol/dl"={1e1},"nmol/dl"={1e-2},"pmol/dl"={1e-5},
+                         "mmol/ml"={1e06},"µmol/ml"={1e3},"nmol/ml"={1},"pmol/ml"={1e-3},NA)
   } else if(dimension=="Mass"){
-    unitFactor <- switch(unit, "mg"={1e-6},"?g"={1e-9},"ng"={1e-12},"pg"={1e-15},NA)
+    unitFactor <- switch(unit, "mg"={1e-6},"µg"={1e-9},"ng"={1e-12},"pg"={1e-15},NA)
   } else if(dimension=="Amount"){
-    unitFactor <- switch(unit, "mmol/l"={1e3},"?mol/l"={1},"nmol/l"={1e-3},"pmol/l"={1e-6},NA)
+    unitFactor <- switch(unit, "mmol/l"={1e3},"µmol/l"={1},"nmol/l"={1e-3},"pmol/l"={1e-6},NA)
   } else if(dimension=="Fraction"){
     unitFactor <- switch(unit, "%"={1e-2},{1})
   } else{
