@@ -33,8 +33,7 @@ getAverage <- function(avgValue,avgUnit,avgType,timeValue,lloqValue,eachID){
     avgType <- ""
     avgDim <- ""
     avgUnit <- ""
-    avgValue <- rep(NaN,length(avgValue))
-    stop("No average type specified for ",eachID)
+    avgValue <- rep(NaN,length(varValue))
   } else {
     idLLOQ <- grepl(pattern = "<",avgValue,fixed = TRUE)
     if(length(idLLOQ)>0 | any(lloqValue != "")){
@@ -175,17 +174,17 @@ getVariance <- function(varValue,varUnit,varType,avgValue,avgUnit,timeValue,n,ll
 
 getDimension <- function(unit,eachID){
   unit <- tolower(unit)
-  if(is.element(trimws(tolower(unit),which = "both"),tolower(c("mg/l","Âµg/l","ng/l","pg/l","mg/dl","Âµg/dl","ng/dl","pg/dl","mg/ml","Âµg/ml","ng/ml","pg/ml")))){
+  if(is.element(trimws(tolower(unit),which = "both"),tolower(c("mg/l","µg/l","ng/l","pg/l","mg/dl","µg/dl","ng/dl","pg/dl","mg/ml","µg/ml","ng/ml","pg/ml")))){
     return("Concentration (mass)")
-  } else if(is.element(trimws(tolower(unit),which = "both"),tolower(c("mmol/l","Âµmol/l","nmol/l","pmol/l","mmol/dl","Âµmol/dl","nmol/dl","pmol/dl","mmol/ml","Âµmol/ml","nmol/ml","pmol/ml")))){
+  } else if(is.element(trimws(tolower(unit),which = "both"),tolower(c("mmol/l","µmol/l","nmol/l","pmol/l","mmol/dl","µmol/dl","nmol/dl","pmol/dl","mmol/ml","µmol/ml","nmol/ml","pmol/ml")))){
     return("Concentration (molar)")
   } else if(is.element(trimws(tolower(unit),which = "both"),tolower(c("","%")))){
     return("Fraction")
   } else if(is.element(trimws(tolower(unit),which = "both"),tolower(c("h","min","s","day(s)","week(s)","month(s)","year(s)")))){
     return("Time")
-  } else if(is.element(trimws(tolower(unit),which = "both"),tolower(c("mmol","Âµmol","nmol","pmol")))){
+  } else if(is.element(trimws(tolower(unit),which = "both"),tolower(c("mmol","µmol","nmol","pmol")))){
     return("Amount")
-  }else if(is.element(trimws(tolower(unit),which = "both"),tolower(c("mg","Âµg","ng","pg")))){
+  }else if(is.element(trimws(tolower(unit),which = "both"),tolower(c("mg","µg","ng","pg")))){
     return("Mass")
   } else {
     stop("Unknown Dimension"," for ",eachID)
@@ -218,6 +217,12 @@ getCompartment <- function(compartment="plasma",eachID){
     return("Undefined")
   } else if(tolower(compartment)=="fraction"){
     return("Undefined")
+  } else if(is.element(compartment,c("Bone","Brain","Fat","Gonads","Heart","Kidney",
+                                     "Large Intestine","Liver","Lung","Muscle","Pancreas",
+                                     "Saliva","Skin","Small Intestine","Spleen","Stomach",
+                                     "Duodenum","UpperJejunum","LowerJejunum","UpperIleum","LowerIleum",
+                                     "Cecum","Colon Ascendens","Colon Transversum","Colon Descendens","Colon Sigmoid","Rectum"))){
+    return("Tissue")
   } else if(is.element(compartment,c("Plasma","Blood Cells","Interstitial","Intracellular"))){
     return(compartment)
   } else {
@@ -284,17 +289,17 @@ getUnitFactorToBaseUnit <- function(unit,eachID){
   unit <- tolower(unit)
   dimension <- getDimension(unit,eachID)
   if(dimension=="Concentration (mass)"){
-    unitFactor <- switch(unit, "mg/l"={1e-6},"Âµg/l"={1e-9},"ng/l"={1e-12},"pg/l"={1e-15},
-                         "mg/dl"={1e-5},"Âµg/dl"={1e-8},"ng/dl"={1e-11},"pg/dl"={1e-14},
-                         "mg/ml"={1e-3},"Âµg/ml"={1e-6},"ng/ml"={1e-9},"pg/ml"={1e-12},NA)
+    unitFactor <- switch(unit, "mg/l"={1e-6},"µg/l"={1e-9},"ng/l"={1e-12},"pg/l"={1e-15},
+                         "mg/dl"={1e-5},"µg/dl"={1e-8},"ng/dl"={1e-11},"pg/dl"={1e-14},
+                         "mg/ml"={1e-3},"µg/ml"={1e-6},"ng/ml"={1e-9},"pg/ml"={1e-12},NA)
   } else if(dimension=="Concentration (molar)"){
-    unitFactor <- switch(unit, "mmol/l"={1e3},"Âµmol/l"={1},"nmol/l"={1e-3},"pmol/l"={1e-6},
-                         "mmol/dl"={1e4},"Âµmol/dl"={1e1},"nmol/dl"={1e-2},"pmol/dl"={1e-5},
-                         "mmol/ml"={1e06},"Âµmol/ml"={1e3},"nmol/ml"={1},"pmol/ml"={1e-3},NA)
+    unitFactor <- switch(unit, "mmol/l"={1e3},"µmol/l"={1},"nmol/l"={1e-3},"pmol/l"={1e-6},
+                         "mmol/dl"={1e4},"µmol/dl"={1e1},"nmol/dl"={1e-2},"pmol/dl"={1e-5},
+                         "mmol/ml"={1e06},"µmol/ml"={1e3},"nmol/ml"={1},"pmol/ml"={1e-3},NA)
   } else if(dimension=="Mass"){
-    unitFactor <- switch(unit, "mg"={1e-6},"Âµg"={1e-9},"ng"={1e-12},"pg"={1e-15},NA)
+    unitFactor <- switch(unit, "mg"={1e-6},"µg"={1e-9},"ng"={1e-12},"pg"={1e-15},NA)
   } else if(dimension=="Amount"){
-    unitFactor <- switch(unit, "mmol/l"={1e3},"Âµmol/l"={1},"nmol/l"={1e-3},"pmol/l"={1e-6},NA)
+    unitFactor <- switch(unit, "mmol/l"={1e3},"µmol/l"={1},"nmol/l"={1e-3},"pmol/l"={1e-6},NA)
   } else if(dimension=="Fraction"){
     unitFactor <- switch(unit, "%"={1e-2},{1})
   } else{
